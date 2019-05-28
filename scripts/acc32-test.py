@@ -8,9 +8,9 @@ title = """
 
 # print header for a line:
 def head():
-    print "//", "L", "A"
-    print "//", "D", "D",
-    print hd(" D[31:0] ", 32), hd(" S[31:0] ", 32)
+    print("//", "L", "A")
+    print("//", "D", "D", end=' ')
+    print(hd(" D[31:0] ", 32), hd(" S[31:0] ", 32))
 
 def bin(x, width):
     s = ""
@@ -28,10 +28,10 @@ def trycase(ld, ad, d):
         S = d
     elif ad:
         S = (S + d) & 0xFFFFFFFF;
-    print "  ", bin(ld, 1), bin(ad, 1), bin(d, 32), bin(S, 32)
+    print("  ", bin(ld, 1), bin(ad, 1), bin(d, 32), bin(S, 32))
 
 def doit():
-    print title
+    print(title)
     head()
     mone = (1<<32)-1
 

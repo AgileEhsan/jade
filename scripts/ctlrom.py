@@ -48,7 +48,7 @@ def SetCtl(opc=0,                       # OPC[5:0]
 
     if 0:
         if CTLROM[adr] != 0:
-            raise Exception, "CTLROM location already set!"
+            raise Exception("CTLROM location already set!")
 
     CTLROM[adr] = data
 
@@ -130,15 +130,15 @@ def BuildCTL():
 
 
 BuildCTL()
-print 80*'#'+'\n'
-print "// Control ROM Contents:\n"
+print(80*'#'+'\n')
+print("// Control ROM Contents:\n")
 for a in range(0, 1<<IWIDTH, 4):
     for b in range(4):
         opc = a >> 2
-        print " 0x%05x" % CTLROM[a+b],
-    print "  // ", BETAOP[opc]
+        print(" 0x%05x" % CTLROM[a+b], end=' ')
+    print("  // ", BETAOP[opc])
 
-print 80*'#'
+print(80*'#')
 
 
 ################################################################################
@@ -148,12 +148,12 @@ print 80*'#'
 
 # print header for a line:
 def head():
-    print "//                R"
-    print "//                A     W            W"
-    print "//                2 A B D          W A"
-    print "//          I     S S S S        M E S M"
-    print "//          R  PC E E E E   ALU  W R E O"
-    print "// ..OPC. Z Q SEL L L L L. ..FN. r F L E"
+    print("//                R")
+    print("//                A     W            W")
+    print("//                2 A B D          W A")
+    print("//          I     S S S S        M E S M")
+    print("//          R  PC E E E E   ALU  W R E O")
+    print("// ..OPC. Z Q SEL L L L L. ..FN. r F L E")
 
 # print CTLROM values for test vector:
 def pctl(a, ctl):
@@ -167,10 +167,10 @@ def pctl(a, ctl):
         v = (ctl >> pos ) & ((1<<w)-1)
         return lh(v, w)
 
-    print "  ", bin(opc, 6), bin(z, 1), bin(irq, 1),
-    print f(14,w=3), f(13), f(12), f(11), f(9, w=2), f(4, w=5),
-    print f(3), f(2), f(1), f(0),
-    print " // " + BETAOP[opc]
+    print("  ", bin(opc, 6), bin(z, 1), bin(irq, 1), end=' ')
+    print(f(14,w=3), f(13), f(12), f(11), f(9, w=2), f(4, w=5), end=' ')
+    print(f(3), f(2), f(1), f(0), end=' ')
+    print(" // " + BETAOP[opc])
 
 
 head()

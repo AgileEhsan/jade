@@ -12,8 +12,8 @@ user_dir = 'files'
 
 # respond with specified status
 def http_status(status):
-    print 'Status:',status
-    print
+    print('Status:',status)
+    print()
     sys.exit(0)
 
 # locate user's directory, create if necessary
@@ -54,8 +54,8 @@ else:
         http_status('500 Read failed: %s' % sys.exc_info()[0])
 
 # send file to the user
-print 'Status: 200 OK'
-print 'Content-Type: application/json'
-print 'Content-Length:',len(json)
-print
-print json,
+print('Status: 200 OK')
+print('Content-Type: application/json')
+print('Content-Length:',len(json))
+print()
+print(json, end=' ')

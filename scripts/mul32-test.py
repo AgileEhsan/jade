@@ -8,7 +8,7 @@ title = """
 
 # print header for a line:
 def head():
-    print "//", hd(" A[31:0] ", 32), hd(" B[31:0] ", 32), hd(" P[31:0] ", 32)
+    print("//", hd(" A[31:0] ", 32), hd(" B[31:0] ", 32), hd(" P[31:0] ", 32))
 
 def bin(x, width):
     s = ""
@@ -19,12 +19,12 @@ def bin(x, width):
 
 def trycase(a, b):
     p = ((a & 0xFFFFFFFF) * (b & 0xFFFFFFFF)) & 0xFFFFFFFF
-    print "  ", bin(a, 32), bin(b, 32), lh(p, 32)
+    print("  ", bin(a, 32), bin(b, 32), lh(p, 32))
 
 
 
 def doit():
-    print title
+    print(title)
     head()
 
     # Make this 32 eventually... for now, it limits test cases to small numbers.

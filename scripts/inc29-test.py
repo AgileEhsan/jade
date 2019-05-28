@@ -9,13 +9,13 @@ w=29
 
 # print header for a line:
 def head():
-    print "//", hd(" P[31:0] ", w), hd(" N[31:0] ", w)
+    print("//", hd(" P[31:0] ", w), hd(" N[31:0] ", w))
 
 def trycase(n):
-    print "  ", bin(n, w), lh(n+1, w)
+    print("  ", bin(n, w), lh(n+1, w))
 
 def doit():
-    print title
+    print(title)
     head()
 
     trycase(0)

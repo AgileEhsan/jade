@@ -7,7 +7,7 @@ cycle = 0   # used to count test cycles
 # specify choices as 'LH' for outputs
 # value of None is always output as '-'
 def field(f,width,value,choices,suffix=' '):
-    for i in xrange(width):
+    for i in range(width):
         if value is None:
             f.write('-')
         else:
@@ -15,7 +15,7 @@ def field(f,width,value,choices,suffix=' '):
     f.write(suffix)
 
 def xfield(f,width,s,choices,suffix=' '):
-    for i in xrange(width):
+    for i in range(width):
         v = '-' if ((s is None) or s[i] in '?ZX') else choices[0] if s[i]=='0' else choices[1]
         f.write(v)
     f.write(suffix)
@@ -93,7 +93,7 @@ def cmp_test_cycle(f,fn,z,v,n,y):
 def cmp_test(f):
     global cycle
     cycle = 0
-    for zvn in xrange(7):
+    for zvn in range(7):
         z = (zvn >> 2) & 1
         v = (zvn >> 1) & 1
         n = zvn & 1
@@ -385,7 +385,7 @@ def regfile_test(f):
     regfile_test_cycle(f,0,0,0,31,31,0,0,0,0)
 
     # write registers with their number, test read ports
-    for i in xrange(34):
+    for i in range(34):
         ra2sel = 0
         wasel = 0
         werf = 1 if i < 32 else 0
@@ -612,7 +612,7 @@ def ctl_test(f):
     content = read_rom(ctlrom)
     assert len(content)==64, 'ctlrom does not have 64 entries'
 
-    for op in xrange(len(content)):
+    for op in range(len(content)):
         sigs = content[op]
         alufn = sigs[:6]
         asel = sigs[6]

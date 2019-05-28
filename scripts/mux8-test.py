@@ -8,8 +8,8 @@ title = """
 
 # print header for a line:
 def head():
-    print "// DDDDDDDD SSS"
-    print "// 01234567 210 Y"
+    print("// DDDDDDDD SSS")
+    print("// 01234567 210 Y")
 
 def bin(x, width):
     s = ""
@@ -20,11 +20,11 @@ def bin(x, width):
 
 def trycase(D, S):
     y = (D >> (7-S)) & 1
-    print "  ", bin(D, 8), bin(S, 3), lh(y, 1)
+    print("  ", bin(D, 8), bin(S, 3), lh(y, 1))
 
 
 def doit():
-    print title
+    print(title)
     head()
 
     if 1:

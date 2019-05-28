@@ -9,7 +9,7 @@ w=32
 
 # print header for a line:
 def head():
-    print "//", hd(" PC[31:2] ", 30), hd(" Off[15:0] ", 16), hd(" BT[31:2] ", 30)
+    print("//", hd(" PC[31:2] ", 30), hd(" Off[15:0] ", 16), hd(" BT[31:2] ", 30))
 
 def bin(x, width):
     s = ""
@@ -20,10 +20,10 @@ def bin(x, width):
 
 def trycase(pc, off):
     s = (pc+off) & 0x3FFFFFFF
-    print "  ", bin(pc, 30), bin(off, 16), bin(s, 30)
+    print("  ", bin(pc, 30), bin(off, 16), bin(s, 30))
 
 def doit():
-    print title
+    print(title)
     head()
 
     off_cases = [ 0, 1, -1, 2, -2, (1<<15)-1, -1 << 15, 37, -37 ] + [1 << x for x in range(15)]

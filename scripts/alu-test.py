@@ -14,10 +14,10 @@ title = """
 def head():
 
     # inputs:
-    print "// ", hd("Fn", 5), hd(" A[31:0] ", 32), hd(" B[31:0] ", 32),
+    print("// ", hd("Fn", 5), hd(" A[31:0] ", 32), hd(" B[31:0] ", 32), end=' ')
 
     # outputs:
-    print hd(" Y[31:0] ", 32)
+    print(hd(" Y[31:0] ", 32))
 
 
 
@@ -26,7 +26,7 @@ def head():
 # Updates global PC to npc value.
 def trycase(A, B, Fn):
     
-    print "   ", bin(Fn, 5), bin(A, 32), bin(B, 32),
+    print("   ", bin(Fn, 5), bin(A, 32), bin(B, 32), end=' ')
     
     if Fn == 0:                         # ADD
         Y = (A + B) & 0xFFFFFFFF
@@ -74,12 +74,12 @@ def trycase(A, B, Fn):
     else:
         Y = -1
 
-    print lh(Y, 32)
+    print(lh(Y, 32))
 
 
 def doit():
     
-    print title
+    print(title)
     head()
 
     cases = [0x0, 0x1, 5, 0xFFFFFFFF, 0xFFFFFFFE];

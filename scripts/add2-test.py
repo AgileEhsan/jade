@@ -9,7 +9,7 @@ w=2
 
 # print header for a line:
 def head():
-    print "//", hd(" AA", w), hd("BB", w), "C", hd("SS", w)
+    print("//", hd(" AA", w), hd("BB", w), "C", hd("SS", w))
 
 def bin(x, width):
     s = ""
@@ -21,10 +21,10 @@ def bin(x, width):
 def trycase(a, b, cin):
     s = a+b+cin
     cout = (a+b+cin) >> w
-    print "  ", bin(a, w), bin(b, w), bin(cin, 1), lh(s, w)
+    print("  ", bin(a, w), bin(b, w), bin(cin, 1), lh(s, w))
 
 def doit():
-    print title
+    print(title)
     head()
 
     mask = (1<<w)-1

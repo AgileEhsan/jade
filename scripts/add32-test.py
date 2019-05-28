@@ -10,7 +10,7 @@ w=32
 
 # print header for a line:
 def head():
-    print "//", hd(" A[31:0] ", w), hd(" B[31:0] ", w), "C", hd(" S[31:0] ", w), "C"
+    print("//", hd(" A[31:0] ", w), hd(" B[31:0] ", w), "C", hd(" S[31:0] ", w), "C")
 
 def bin(x, width):
     s = ""
@@ -22,10 +22,10 @@ def bin(x, width):
 def trycase(a, b, cin):
     s = a+b+cin
     cout = (a+b+cin) >> w
-    print "  ", bin(a, w), bin(b, w), bin(cin, 1), lh(s, w), lh(cout, 1)
+    print("  ", bin(a, w), bin(b, w), bin(cin, 1), lh(s, w), lh(cout, 1))
 
 def doit():
-    print title
+    print(title)
     head()
     mone = (1<<w)-1
 

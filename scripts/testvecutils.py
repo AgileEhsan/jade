@@ -30,4 +30,4 @@ def hd(title, width):
     return s
 
 # Add a comment to the test data transcript:
-def cmt(msg): print "\n//", msg
+def cmt(msg): print("\n//", msg)

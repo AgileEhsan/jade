@@ -14,10 +14,10 @@ title = """
 def head():
 
     # inputs:
-    print "// ", hd("Fn", 4), hd(" A[31:0] ", 32), hd(" B[31:0] ", 32),
+    print("// ", hd("Fn", 4), hd(" A[31:0] ", 32), hd(" B[31:0] ", 32), end=' ')
 
     # outputs:
-    print hd(" Y[31:0] ", 32)
+    print(hd(" Y[31:0] ", 32))
 
 
 
@@ -26,7 +26,7 @@ def head():
 # Updates global PC to npc value.
 def trycase(A, B, Fn):
     
-    print "   ", bin(Fn, 4), bin(A, 32), bin(B, 32),
+    print("   ", bin(Fn, 4), bin(A, 32), bin(B, 32), end=' ')
     
     # Bitwise boolean fn; Fn[3:0] is truth table:
     tt = Fn & 0xF
@@ -35,12 +35,12 @@ def trycase(A, B, Fn):
         index = ((A >> bitno) & 1) + (((B >> bitno) & 1) << 1)
         if (tt >> index) & 1: Y |= 1 << bitno
 
-    print lh(Y, 32)
+    print(lh(Y, 32))
 
 
 def doit():
     
-    print title
+    print(title)
     head()
 
     cases = [0x0, 0x1, 5, 0xFFFFFFFF, 0xFFFFFFFE];
